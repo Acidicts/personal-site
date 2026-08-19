@@ -1,0 +1,351 @@
+body {
+    --ink: #241d16;
+    --line: #b7a878;
+    --paper: #e4d9bc;
+    --card: #f2ead3;
+    --muted: #b7a878;
+    --accent: #1f6f78;
+    --ok: #1f6f78;
+    --warn: #b97f19;
+
+    --green: #2d6a4f;
+    --pending: #d97706;
+    --denied: #a63a2b;
+
+    --nav: #5a4f3e;
+
+    --text-colour-invert: #000;
+    --text-colour: #fff;
+
+    background:
+        radial-gradient(circle at 1px 1px,
+            rgba(36, 29, 22, 0.05) 1px,
+            transparent 1px) 0 0 / 14px 14px,
+        #e4d9bc;
+
+    overflow-x: hidden;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --ink: #e4d9bc;
+        --line: #5a4f3e;
+        --paper: #241d16;
+        --card: #241d16;
+        --muted: #b7a878;
+        --accent: #1f6f78;
+        --ok: #1f6f78;
+        --warn: #b97f19;
+
+        --text-colour-invert: #fff;
+        --text-colour: #000;
+
+        background:
+            radial-gradient(circle at 1px 1px, #e8dfd00d 1px, transparent 1px) 0 0/14px 14px,
+            #1a1510;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Archivo Black", "Arial Black", sans-serif;
+}
+
+footer {
+    margin-top: auto; /* Pushes the footer to the bottom of the flex body */
+    padding: 2rem;
+    color: var(--ink);
+    background: radial-gradient(circle at 1px 1px, #241d16 1px, transparent 1px) 0 0/14px 14px,
+            #241d16;
+}
+
+footer a {
+    color: var(--line);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+nav {
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    background-color: var(--nav);
+    width: 100%;
+    padding: 0 1rem;
+    border-bottom: 2px var(--card) dashed;
+}
+
+nav h1 {
+    color: #e4d9bc;
+    font-size: 1.1rem;
+}
+
+nav .tabs {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav .tabs .btn {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+nav .tabs .btn svg {
+    transition: fill ease-in-out 0.25s;
+}
+
+nav .tabs .btn svg:hover {
+    fill: var(--accent);
+}
+
+section {
+    max-width: 1100px;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.info-box {
+    display: flex;
+    width: 100%;
+    background-color: var(--card);
+    padding: 1.25rem;
+    border: 2px dashed var(--line);
+    border-radius: 2rem;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.info-box h2 {
+    color: var(--ink);
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.info-box p {
+    margin: 0.25rem 0;
+    color: var(--muted);
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+.info-box img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--line);
+}
+
+.section-2 {
+    max-width: 950px;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+.section-2 .row {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    flex-shrink: 0;
+
+    animation: scroll-left 20s linear infinite;
+}
+
+.section-2 .row:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Row is 4 copies of the pill set, so -25% = exactly one
+           full set width. This makes the loop seamless. */
+        transform: translateX(-25%);
+    }
+}
+
+.section-2 .muted {
+    margin-top: 1rem;
+    font-family: monospace;
+    color: var(--muted);
+    opacity: 60%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    background-color: var(--card);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: var(--ink);
+    font-size: 0.85rem;
+}
+
+.pill-green,
+.pill-pending,
+.pill-red {
+    border-radius: 50%;
+    height: 0.6rem;
+    width: 0.6rem;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.pill-green {
+    background-color: var(--green);
+}
+
+.pill-pending {
+    background-color: var(--pending);
+}
+
+.pill-red {
+    background-color: var(--denied);
+}
+
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section-3 .projects {
+    background: var(--paper);
+    padding: 1.5rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    border: 2px solid var(--line);
+}
+
+.section-3 .heading {
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.section-3 .break {
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+    margin-bottom: 0.25rem;
+    opacity: 40%;
+}
+
+.section-3 .projects .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.section-3 .projects .gallery .project {
+    background: var(--card);
+    padding: 1rem;
+    border: 2px solid var(--line);
+    border-radius: 25px;
+    width: 100%;
+    overflow: hidden;
+
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.section-3 .projects .gallery .project:hover {
+    scale: 1.05;
+    transform: translateY(-1rem);
+}
+
+.section-3 .projects .gallery .project .title {
+    color: var(--ink);
+    display: block;
+    margin-top: 0.75rem;
+}
+
+.section-3 .projects .gallery .project .time-logged {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-family: monospace;
+    margin-top: 0.25rem;
+}
+
+.section-3 .projects .gallery .project img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Specific Mobile Styles */
+@media (max-width: 600px) {
+    section {
+        padding: 0.5rem;
+    }
+
+    .info-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-3 {
+        padding: 0;
+    }
+
+    .section-3 .projects {
+        padding: 0.75rem;
+    }
+
+    .section-3 .projects .gallery {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
