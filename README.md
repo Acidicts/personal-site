@@ -1,11 +1,21 @@
-My Personal Site - A static site
-With some javascript
+# My Personal Site - A static site
+### With some javascript
 
-My personal site listing some languages I know and what level for them and Some of my best projects I have made
+![site image](assets/images/site.png)
 
+# Nav Bar
+A small title heading with a github icon to my repo on the right
+
+# Sections:
+## >>About Me 
+A brief look about me
+## >>Language Pills
+A carosel of pills with the colours of red yellow or green depending on confidence with a hover title of level of skill
+## >>Favourite Project
+A display of my favourite projects made in ruby on rails made as hyperlinks connecting to their github repo
 
 AI Usage:
-- Used Claude for making the animation stop on hover ease into the stop (pill_spin.js)
+- Used Claude for fixing styling bugs
 
 Credits:
 | What | Source | User / Org |

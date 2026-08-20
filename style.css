@@ -121,6 +121,30 @@ section {
     padding: 1rem;
 }
 
+.section-1 {
+    margin: auto;
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+@media (max-width:600px) {
+    .section-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.img-box img {
+    border-radius: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-box img:hover {
+    box-shadow: #fff 0px 0px 16px;
+}
+
 .info-box {
     display: flex;
     width: 100%;
@@ -254,15 +278,10 @@ section {
 }
 
 .section-3 .projects {
-    background: var(--paper);
-    padding: 1.5rem;
-    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 1.5rem;
-    width: 100%;
-    border: 2px solid var(--line);
 }
 
 .section-3 .heading {
@@ -287,12 +306,11 @@ section {
 .section-3 .projects .gallery .project {
     background: var(--card);
     padding: 1rem;
-    border: 2px solid var(--line);
-    border-radius: 25px;
+    border-radius: 5px;
     width: 100%;
     overflow: hidden;
 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 

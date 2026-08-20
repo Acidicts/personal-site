@@ -6,7 +6,6 @@ projectNodes.forEach((node) => {
             const rawData = node.dataset.project;
             const projectInfo = JSON.parse(rawData);
             
-            // Make sure the repo URL actually exists before opening
             if (projectInfo && projectInfo.repo) {
                 window.open(projectInfo.repo, '_blank');
             }
