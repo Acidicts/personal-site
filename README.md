@@ -20,5 +20,5 @@ AI Usage:
 Credits:
 | What | Source | User / Org |
 |------|--------|------------|
-| Colour theme reused | issued.bing-bong.uk | @Acidicts (me) |
+| Colour theme | [weulkin/firelight-23](https://lospec.com/palette-list/firelight-23) | [Valerie Lynn](https://lospec.com/weulkin) |
 | Icons Sourced | icons.hackclub.com | @hackclub |

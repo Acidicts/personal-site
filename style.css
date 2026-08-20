@@ -1,18 +1,18 @@
 body {
-    --ink: #241d16;
-    --line: #b7a878;
-    --paper: #e4d9bc;
-    --card: #f2ead3;
-    --muted: #b7a878;
+    --ink: #9e527d;
+    --line: #35357a;
+    --paper: #3d3847;
+    --card: #323154;
+    --muted: #744587;
     --accent: #1f6f78;
     --ok: #1f6f78;
     --warn: #b97f19;
 
     --green: #2d6a4f;
-    --pending: #d97706;
-    --denied: #a63a2b;
+    --pending: #f28943;
+    --denied: #cf5959;
 
-    --nav: #5a4f3e;
+    --nav: #323154;
 
     --text-colour-invert: #000;
     --text-colour: #fff;
@@ -21,33 +21,13 @@ body {
         radial-gradient(circle at 1px 1px,
             rgba(36, 29, 22, 0.05) 1px,
             transparent 1px) 0 0 / 14px 14px,
-        #e4d9bc;
+        var(--paper);
 
     overflow-x: hidden;
     min-height: 100vh;
     
     display: flex;
     flex-direction: column;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        --ink: #e4d9bc;
-        --line: #5a4f3e;
-        --paper: #241d16;
-        --card: #241d16;
-        --muted: #b7a878;
-        --accent: #1f6f78;
-        --ok: #1f6f78;
-        --warn: #b97f19;
-
-        --text-colour-invert: #fff;
-        --text-colour: #000;
-
-        background:
-            radial-gradient(circle at 1px 1px, #e8dfd00d 1px, transparent 1px) 0 0/14px 14px,
-            #1a1510;
-    }
 }
 
 * {
@@ -64,13 +44,12 @@ footer {
     margin-top: auto; /* Pushes the footer to the bottom of the flex body */
     padding: 2rem;
     color: var(--ink);
-    background: radial-gradient(circle at 1px 1px, #241d16 1px, transparent 1px) 0 0/14px 14px,
-            #241d16;
+    background-color: var(--nav);
 }
 
 footer a {
-    color: var(--line);
-    text-decoration: none;
+    color: var(--ink);
+    text-decoration: underline;
     transition: all 0.3s ease;
 }
 
@@ -91,7 +70,6 @@ nav {
 }
 
 nav h1 {
-    color: #e4d9bc;
     font-size: 1.1rem;
 }
 
@@ -107,6 +85,7 @@ nav .tabs .btn {
 }
 
 nav .tabs .btn svg {
+    fill: var(--ink);
     transition: fill ease-in-out 0.25s;
 }
 
@@ -150,7 +129,7 @@ section {
     width: 100%;
     background-color: var(--card);
     padding: 1.25rem;
-    border: 2px dashed var(--line);
+    border: 2px solid var(--line);
     border-radius: 2rem;
     align-items: center;
     gap: 1.25rem;
